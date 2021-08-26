@@ -2,7 +2,9 @@
   "name": "flare",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/flare.js",
+  "module": "es/flare.js",
+  "sideEffects": false,
   "scripts": {
     "build": "rollup --config",
     "lint": "eslint --fix \"{src}/\"",
@@ -25,5 +27,9 @@
       "prettier --write",
       "eslint --fix"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kev1nzh37/flare"
   }
 }

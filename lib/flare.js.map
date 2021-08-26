@@ -1,0 +1,1 @@
+{"version":3,"file":"flare.min.js.map","sources":["../src/index.ts"],"sourcesContent":["const a: string = 'first'\n\nconst test = async (value: string): Promise<void> => {\n  console.log(value)\n}\n\ntest(a)\n"],"names":[],"mappings":";;AAAA,IAAM,CAAC,GAAW,OAAO,CAAA;AAEzB,IAAM,IAAI,GAAG,UAAO,KAAa;;QAC/B,OAAO,CAAC,GAAG,CAAC,KAAK,CAAC,CAAA;;;KACnB,CAAA;AAED,IAAI,CAAC,CAAC,CAAC;;"}
