@@ -1,7 +1,9 @@
-const a: string = 'first'
+import { Flare } from './interface/index'
+import { Init, _config as config } from './init'
 
-const test = async (value: string): Promise<void> => {
-  console.log(value)
+const flare: Flare = {
+  Init,
+  config
 }
 
-test(a)
+export { flare }

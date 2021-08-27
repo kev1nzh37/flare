@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    dsadasdasdasdas
+
+    <script type="module">
+      import { flare } from './es/flare.js'
+
+      flare.Init({
+        locationHref: window.location.href,
+        onReport(errData) {
+                console.log('收到错误信息了，在这里发送', errData)
+        }
+      })
+
+
+      const a = 1
+      cnsole.log(a)
+
+    </script>
+  </body>
+</html>
