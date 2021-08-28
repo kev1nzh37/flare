@@ -1,9 +1,8 @@
 import { Flare } from './interface/index'
-import { Init, _config as config } from './init'
+import { init } from './init'
 
 const flare: Flare = {
-  Init,
-  config
+  init
 }
 
 export { flare }

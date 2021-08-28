@@ -9,19 +9,33 @@
   <body>
     dsadasdasdasdas
 
+    <!-- <img src="https://yun.tuia.cn/image/kkk.png" />
+    <script src="https://yun.tuia.cn/foundnull.js"></script>
+    <link href="https://yun.tuia.cn/foundnull.css" rel="stylesheet" /> -->
     <script type="module">
       import { flare } from './es/flare.js'
 
-      flare.Init({
+      flare.init({
         locationHref: window.location.href,
         onReport(errData) {
-                console.log('收到错误信息了，在这里发送', errData)
+          console.log('收到错误信息了，在这里发送', errData)
         }
       })
+//       Promise.reject('promise error');
 
+      let img = document.createElement('img')
+      img.src = 'https://yun.tuia.cn/image/kkk.png'
+      document.body.append(img)
 
-      const a = 1
-      cnsole.log(a)
+//       let script = document.createElement('script')
+//       script.src = 'https://yun.tuia.cn/foundnull.js'
+//       document.body.append(script)
+
+//       let link = document.createElement('link')
+//       link.href = 'https://yun.tuia.cn/foundnull.css'
+//       link.rel = 'stylesheet'
+//       document.body.append(link)
+
 
     </script>
   </body>

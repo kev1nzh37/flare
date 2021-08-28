@@ -11,7 +11,6 @@ export function addError (errObj: ErrObj): void {
 export const initListenr = (callback: ErrorListener): void => {
   errorListenr = callback
 }
-
 export function resetError (): void {
   doChange('reset')
 }

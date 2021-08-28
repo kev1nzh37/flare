@@ -1,14 +1,13 @@
 import { Config, InitObj } from './interface'
 import { isObj, isWindow } from './until'
-import { readySendErrReport } from './report'
+import { initSendErrReport } from './report'
 import { initOneError } from './onerror'
 
-export function Init (initObj: InitObj): void {
+export function init (initObj: InitObj): void {
   const { config, onReport } = initObj
 
   if (!isWindow()) {
-    console.error('not in web')
-    return
+    throw new Error('not in web')
   }
 
   if (isObj(config) && isWindow) {
@@ -16,10 +15,11 @@ export function Init (initObj: InitObj): void {
     _config.locationHref = locationHref || window.location.href
   }
 
-  readySendErrReport(onReport)
+  initSendErrReport(onReport)
   initOneError()
 }
 
 export const _config: Config = {
-  auto: false
+  auto: false,
+  locationHref: undefined
 }
