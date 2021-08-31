@@ -1,3 +1,7 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var oneErrorTypeMap = {
     referenceError: 'Uncaught ReferenceError',
     typeError: 'Uncaught TypeError',
@@ -139,7 +143,7 @@ function addPromiseEvent() {
  * @param {OneErrorParams} oneErrorParams  error data from event
  **/
 function computedErrorObject(oneErrorParams) {
-    //.....
+    // .....
     console.log(oneErrorParams);
     var errObj = Object.assign({}, oneErrorParams, {
         id: 11
@@ -164,4 +168,5 @@ var flare = {
     init: init
 };
 
-export { flare };
+exports.flare = flare;
+//# sourceMappingURL=flare.js.map

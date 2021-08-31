@@ -2689,8 +2689,6 @@
   "integrity" "sha512-Au92NuznFklgQCUcV96iXlxUbHuB1vQMaH76DHl5M11TotjOHwqk9CwcrT78+Tnv4FN9uTBxq6p4EJoYkpyekg== sha1-tj7a3ZhRsNYYptDmr4IBlVp3rv8="
   "resolved" "https://registry.nlark.com/rollup/download/rollup-2.56.3.tgz"
   "version" "2.56.3"
-  dependencies:
-    "fsevents" "~2.3.2"
   optionalDependencies:
     "fsevents" "~2.3.2"
 

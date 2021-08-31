@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["./*.spec.*"],
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES6"
+  }
+}

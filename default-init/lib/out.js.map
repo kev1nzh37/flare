@@ -1,0 +1,1 @@
+{"version":3,"file":"out.min.js.map","sources":["../src/index.ts"],"sourcesContent":["const init = () => console.log('init')\n\nexport { init }\n"],"names":[],"mappings":";;;;IAAM,IAAI,GAAG,cAAM,OAAA,OAAO,CAAC,GAAG,CAAC,MAAM,CAAC;;;;"}

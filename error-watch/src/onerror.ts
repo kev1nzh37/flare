@@ -1,11 +1,12 @@
 import { addError } from './error-observer'
 import { ErrObj, NetworkOrSrcEventTarget } from './interface'
 import { getOnerrorType } from './until'
+
 let INITONERROR = false
 /**
  * init all of error event
  **/
-function installOneError (): void {
+function installOneError(): void {
   if (INITONERROR) {
     throw new Error('onerror is inited.')
   }
@@ -20,7 +21,7 @@ function installOneError (): void {
 /**
  * check network reject or src reject
  **/
-function addNetworkOrSrcEvent (): void {
+function addNetworkOrSrcEvent(): void {
   window.addEventListener(
     'error',
     (error: Event) => {
@@ -55,7 +56,7 @@ function addNetworkOrSrcEvent (): void {
 /**
  * check onerror callback of error
  **/
-function addOneErrorEvent (): void {
+function addOneErrorEvent(): void {
   window.onerror = (message, url, lineNo, columnNo, errorObj) => {
     console.log(message, url, lineNo, columnNo, errorObj)
     const oneErrorParams: ErrObj = {
@@ -73,25 +74,25 @@ function addOneErrorEvent (): void {
 /**
  * check promise reject
  **/
-function addPromiseEvent (): void {
+function addPromiseEvent(): void {
   window.addEventListener(
     'unhandledrejection',
     (error) => {
       console.log('捕获到异常：', error)
 
-      //       const { tagName, src, href } = error.target as NetworkOrSrcEventTarget
-      //       if (
-      //         tagName !== undefined &&
-      //         ['IMG', 'LINK', 'SCRIPT'].includes(tagName)
-      //       ) {
-      //         const networkOrSrcParams: ErrObj = {
-      //           url: window.location.href,
-      //           type: 'resourceError',
-      //           srcUrl: src || href,
-      //           tagName
-      //         }
-      //         computedErrorObject(networkOrSrcParams)
-      //       }
+      const { tagName, src, href } = error.target as NetworkOrSrcEventTarget
+      if (
+        tagName !== undefined &&
+        ['IMG', 'LINK', 'SCRIPT'].includes(tagName)
+      ) {
+        const networkOrSrcParams: ErrObj = {
+          url: window.location.href,
+          type: 'resourceError',
+          srcUrl: src || href,
+          tagName
+        }
+        computedErrorObject(networkOrSrcParams)
+      }
       return true
     },
     true
@@ -102,7 +103,7 @@ function addPromiseEvent (): void {
  * get all error and add
  * @param {OneErrorParams} oneErrorParams  error data from event
  **/
-function computedErrorObject (oneErrorParams: ErrObj): void {
+function computedErrorObject(oneErrorParams: ErrObj): void {
   // .....
   console.log(oneErrorParams)
   const errObj = Object.assign({}, oneErrorParams, {
